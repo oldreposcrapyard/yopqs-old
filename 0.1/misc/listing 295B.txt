@@ -1,0 +1,22 @@
+<?PHP
+/* Skrypt pochodzi z ksi¹¿ki "505 skryptów dla webmastera" */
+/* autor: Marcin Lis                 http://marcinlis.com  */
+function checkPass()
+{
+  $haslo = $_POST["haslo"];
+  if($haslo <> "tajny_kod"){
+    return false;
+  }
+  else{
+    return true;
+  }
+}
+if(isSet($_POST["haslo"]) && checkPass()){
+  include('index1.html');
+}
+else{
+  echo("<HTML><BODY><CENTER>");
+  echo("<H2>Niepoprawne has³o!</H2>");
+  echo("</CENTER></BODY></HTML>");
+}
+?>
